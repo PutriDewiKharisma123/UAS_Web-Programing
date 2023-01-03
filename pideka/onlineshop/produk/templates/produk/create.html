@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    {{page_title}}
+{% endblock page_title %}
+
+{% block contents %}
+<section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Input produk</h3>
+              </div>
+            <!-- /.card-header -->
+            <!-- form start -->
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="Nama">{{ form.Nama.label_tag }}</label>
+                  <input type="text" name="Nama" class="form-control" id="Nama" placeholder="Nama produk">
+                </div>
+                <div class="form-group">
+                  <label for="Jenis">{{ form.Jenis.label_tag }}</label>
+                  <input type="text" name="Jenis" class="form-control" id="Jenis" placeholder="Jenis produk">
+                </div>
+                <div class="form-group">
+                  <label for="Harga">{{ form.Harga.label_tag }}</label>
+                  <input type="text" name="Harga" class="form-control" id="Harga" placeholder="Harga produk">
+                </div>
+                <div class="form-group mb-0">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
+                    <label class="custom-control-label" for="exampleCheck1">setuju<a href="#"></a>.</label>
+                  </div>
+                </div>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.card -->
+          </div>
+        <!--/.col (left) -->
+        <!-- right column -->
+        <div class="col-md-6">
+
+        </div>
+        <!--/.col (right) -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+{% endblock contents %}
+
+
+
+  <div class="card-body">
+    <div id="actions" class="row">
+      <div class="col-lg-6">
+        <div class="btn-group w-100">
+          <span class="btn btn-success col fileinput-button">
+            <i class="fas fa-plus"></i>
+            <span>add produk</span>
+          </span>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+
+
